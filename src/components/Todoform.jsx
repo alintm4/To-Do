@@ -10,7 +10,7 @@ function Todoform({ item }) {
     setDataItem("");
   };
   return (
-    <form onSubmit={submitfncn}>
+    <form onSubmit={submitfncn} >
       <h1
         className=" text-white block 
         font-bold text-3xl mb-4 

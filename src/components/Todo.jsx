@@ -6,7 +6,7 @@ function Todo({ tasks,deleteTask,editTask }) {
   return (
     <> 
     <div
-      className=" bg-slate-400 max-w-80 text-white
+      className=" bg-black max-w-80 text-white
          text-xl mt-4
         "
     >

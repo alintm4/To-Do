@@ -7,10 +7,12 @@ import EditTodoForm from "./EditTodoForm";
 function Todoall() {
   const [todos, setTodo] = useState([]);
 
+
   const item = (todo) => {
     setTodo([...todos, { id:uuidv4(), tasks: todo, isEditing:false,
     },]);
   }
+
 
   const deleteTask=(id)=>{
     setTodo(todos.filter((todo)=> todo.id !== id))

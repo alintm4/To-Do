@@ -6,7 +6,11 @@ import Todoall from "./components/Todoall";
 function App() {
   return (
     <>
+    <div className="bg-white">
+
+    
     <Todoall />
+    </div>
    
     </>
   );
