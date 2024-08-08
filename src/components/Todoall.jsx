@@ -9,9 +9,16 @@ function Todoall() {
 
 
   const item = (todo) => {
-    setTodo([...todos, { id:uuidv4(), tasks: todo, isEditing:false,
-    },]);
+    if(todo.trim()){
+      setTodo([...todos, { id:uuidv4(), tasks: todo, isEditing:false,completed:false,
+      }]);
+    }
+    else{
+window.alert("task cannot be empty")
+    }
+    
   }
+
 
   const taskCompleted=(id)=>{
     setTodo(
@@ -56,7 +63,7 @@ function Todoall() {
       </>) :
       
       ( 
-        <Todo tasks={todo} 
+        <Todo tasks={todo } 
         key={todo.id} 
         deleteTask={deleteTask}
         editTask={editTask}
