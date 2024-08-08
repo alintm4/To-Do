@@ -13,6 +13,15 @@ function Todoall() {
     },]);
   }
 
+  const taskCompleted=(id)=>{
+    setTodo(
+      todos.map((todo)=>
+        todo.id === id ? {...todo, completed : ! todo.completed}:todo
+
+      )
+    )
+
+  }
 
   const deleteTask=(id)=>{
     setTodo(todos.filter((todo)=> todo.id !== id))
@@ -51,6 +60,7 @@ function Todoall() {
         key={todo.id} 
         deleteTask={deleteTask}
         editTask={editTask}
+        taskCompleted={taskCompleted}
         />
       )) }
     </div>

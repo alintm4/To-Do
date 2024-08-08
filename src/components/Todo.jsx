@@ -1,7 +1,7 @@
 import React from "react";
 
 
-function Todo({ tasks,deleteTask,editTask }) {
+function Todo({ tasks,deleteTask,editTask ,taskCompleted}) {
     
   return (
     <> 
@@ -11,9 +11,18 @@ function Todo({ tasks,deleteTask,editTask }) {
         "
     >
       <div className="flex">
-        <div>
-          <span className="flex-row">{tasks.tasks}</span>
-        </div>
+        
+      <p
+  className={`cursor-pointer ${
+    tasks.completed
+      ? "text-purple-300 line-through" // Tailwind color for completed tasks
+      : "text-white" // Tailwind color for incompleted tasks
+  }`}
+  onClick={() => taskCompleted(tasks.id)}
+>
+  {tasks.tasks}
+</p>
+       
         <div className="ml-auto">
           <button type="submit" onClick={()=>{
             editTask(tasks.id)
